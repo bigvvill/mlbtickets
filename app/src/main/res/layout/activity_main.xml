@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.mlbtickets.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="68dp"
+            android:background="@drawable/reds_logo" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36dp"
+            android:text="@string/toolbarHeading"
+            android:layout_marginLeft="55dp"
+            android:textColor="@color/white"/>
+</android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/gameSelectLabel"
+        android:layout_width="292dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="56dp"
+        android:text="@string/gameLabelText"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:textColor="@color/red"/>
+
+    <Spinner
+        android:id="@+id/gameSelect"
+        android:layout_width="393dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/red"
+        android:entries="@array/games"
+        android:textSize="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameSelectLabel" />
+
+    <TextView
+        android:id="@+id/ticketSelectLabel"
+        android:layout_width="295dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/ticketLabelText"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameSelect"
+        android:textColor="@color/red"
+        android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/ticketSelect"
+        android:layout_width="393dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/red"
+        android:entries="@array/games"
+        android:textSize="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticketSelectLabel"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/ticketInfo"
+        android:layout_width="345dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticketSelect" />
+
+
+</android.support.constraint.ConstraintLayout>

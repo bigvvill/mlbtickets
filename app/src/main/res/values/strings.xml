@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">MLBTickets</string>
+    <string name="actionSettings">Settings</string>
+    <string name="toolbarHeading">TICKETS</string>
+    <string name="gameLabelText">CHOOSE A GAME TO PURCHASE TICKETS</string>
+    <string name="ticketLabelText">CHOOSE YOUR TICKETS</string>
+
+    <string-array name="games">
+        <item>CHOOSE:</item>
+        <item>4/16/18 | Reds at Brewers | 7:40PM EDT</item>
+        <item>4/17/18 | Reds at Brewers | 7:40PM EDT</item>
+        <item>4/18/18 | Reds at Brewers | 1:40PM EDT</item>
+        <item>4/20/18 | Reds at Cardinals | 8:15PM EDT</item>
+        <item>4/21/18 | Reds at Cardinals | 2:15PM EDT</item>
+        <item>4/22/18 | Reds at Cardinals | 2:15PM EDT</item>
+        <item>4/23/18 | Braves at Reds | 6:40PM EDT</item>
+        <item>4/24/18 | Braves at Reds | 6:40 PM EDT</item>
+        <item>4/25/18 | Braves at Reds | 6:40 PM EDT</item>
+        <item>4/26/18 | Braves at Reds | 12:35 PM EDT</item>
+        <item>4/27/18 | Reds at Twins | 8:10PM EDT</item>
+        <item>4/28/18 | Reds at Twins | 2:10PM EDT</item>
+        <item>4/29/18 | Reds at Twins | 2:10 PM EDT</item>
+    </string-array>
+
+    <string-array name="twins">
+        <item>CHOOSE:</item>
+        <item>$86.00 Dugout Box Infield</item>
+        <item>$68.00 Home Plate Box Low</item>
+        <item>$53.00 Infield Box Low</item>
+        <item>$42.00 Diamond Box Mid</item>
+        <item>$16.00 Field View</item>
+    </string-array>
+
+    <string-array name="reds">
+        <item>CHOOSE:</item>
+        <item>$86.00 Dugout Box Infield</item>
+        <item>$68.00 Home Plate Box Low</item>
+        <item>$53.00 Infield Box Low</item>
+        <item>$42.00 Diamond Box Mid</item>
+        <item>$16.00 Field View</item>
+    </string-array>
+
+    <string-array name="cardinals">
+        <item>CHOOSE:</item>
+        <item>$350.90 Cardinals Club Rows D-E-F </item>
+        <item>$112.90 Diamond Box</item>
+        <item>$72.90 Home Field Box</item>
+        <item>$37.90 1st, 3rd Base Loge</item>
+        <item>$16.90 Infield Terrace</item>
+    </string-array>
+
+    <string-array name="brewers">
+        <item>CHOOSE:</item>
+        <item>$105.00 Field Diamond Platinum </item>
+        <item>$60.00 Field Infield Platinum</item>
+        <item>$42.00 Club Infield Box</item>
+        <item>$22.00 Club Outfield Box</item>
+        <item>$6.00 Terrace Reserved</item>
+    </string-array>
+</resources>
