@@ -2,8 +2,20 @@
     <string name="app_name">MLBTickets</string>
     <string name="actionSettings">Settings</string>
     <string name="toolbarHeading">TICKETS</string>
-    <string name="gameLabelText">CHOOSE A GAME TO PURCHASE TICKETS</string>
+    <string name="gameLabelText">CHOOSE YOUR GAME</string>
     <string name="ticketLabelText">CHOOSE YOUR TICKETS</string>
+    <string name="paymentLabel">PAYMENT INFORMATION</string>
+    <string name="cardTypeLabel">Card Type:</string>
+    <string name="nameLabel">Name on Card:</string>
+    <string name="cardNumberLabel">16-digit Card number:</string>
+    <string name="dateLabel">Exp. Date:</string>
+    <string name="secCodeLabel">Sec Code:</string>
+    <string name="zipLabel">Billing Zip:</string>
+    <string name="purchaseButton">CONFIRM PURCHASE</string>
+    <string name="numTicketsLabel"># of Tickets:</string>
+
+
+
 
     <string-array name="games">
         <item>CHOOSE:</item>
@@ -22,6 +34,19 @@
         <item>4/29/18 | Reds at Twins | 2:10 PM EDT</item>
     </string-array>
 
+    <string-array name="numTickets">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
     <string-array name="twins">
         <item>CHOOSE:</item>
         <item>$86.00 Dugout Box Infield</item>
@@ -33,11 +58,11 @@
 
     <string-array name="reds">
         <item>CHOOSE:</item>
-        <item>$86.00 Dugout Box Infield</item>
-        <item>$68.00 Home Plate Box Low</item>
-        <item>$53.00 Infield Box Low</item>
-        <item>$42.00 Diamond Box Mid</item>
-        <item>$16.00 Field View</item>
+        <item>$260.00 Diamond</item>
+        <item>$114.00 Club Home</item>
+        <item>$85.00 Dugout Box</item>
+        <item>$36.00 Field Box</item>
+        <item>$18.00 Lower View</item>
     </string-array>
 
     <string-array name="cardinals">
@@ -56,5 +81,12 @@
         <item>$42.00 Club Infield Box</item>
         <item>$22.00 Club Outfield Box</item>
         <item>$6.00 Terrace Reserved</item>
+    </string-array>
+
+    <string-array name="cardType">
+        <item>CHOOSE:</item>
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>Discover</item>
     </string-array>
 </resources>

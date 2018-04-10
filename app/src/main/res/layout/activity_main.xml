@@ -30,21 +30,21 @@ tools:context="com.example.mlbtickets.MainActivity">
 
     <TextView
         android:id="@+id/gameSelectLabel"
-        android:layout_width="292dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="56dp"
+        android:layout_width="399dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
         android:text="@string/gameLabelText"
         android:textAlignment="center"
-        android:textSize="22dp"
+        android:textColor="@color/red"
+        android:textSize="21dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:textColor="@color/red"/>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Spinner
         android:id="@+id/gameSelect"
-        android:layout_width="393dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="365dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="25dp"
         android:background="@color/red"
         android:entries="@array/games"
         android:textSize="8dp"
@@ -56,41 +56,220 @@ tools:context="com.example.mlbtickets.MainActivity">
         android:layout_width="295dp"
         android:layout_height="35dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="8dp"
         android:text="@string/ticketLabelText"
         android:textAlignment="center"
-        android:textSize="22dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameSelect"
         android:textColor="@color/red"
-        android:visibility="invisible" />
+        android:textSize="21dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameSelect" />
+
+    <TextView
+        android:id="@+id/numTicketsLabel"
+        android:layout_width="87dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/numTicketsLabel"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticketSelectLabel" />
+
+    <Spinner
+        android:id="@+id/numTicketsSelect"
+        android:layout_width="38dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/red"
+        android:entries="@array/numTickets"
+        android:textSize="8dp"
+        app:layout_constraintStart_toEndOf="@+id/numTicketsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/ticketSelectLabel" />
 
     <Spinner
         android:id="@+id/ticketSelect"
-        android:layout_width="393dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="365dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="26dp"
         android:background="@color/red"
         android:entries="@array/games"
         android:textSize="8dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ticketSelectLabel"
-        android:visibility="invisible" />
+        app:layout_constraintTop_toBottomOf="@+id/numTicketsLabel" />
 
     <TextView
         android:id="@+id/ticketInfo"
         android:layout_width="345dp"
-        android:layout_height="95dp"
+        android:layout_height="107dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textAlignment="center"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         android:textSize="16dp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ticketSelect" />
+
+    <TextView
+        android:id="@+id/paymentLabel"
+        android:layout_width="346dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/paymentLabel"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticketInfo" />
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="99dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/nameLabel"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentLabel" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="258dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/paymentLabel" />
+
+    <TextView
+        android:id="@+id/cardTypeLabel"
+        android:layout_width="75dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/cardTypeLabel"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <Spinner
+        android:id="@+id/cardType"
+        android:layout_width="106dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/red"
+        android:entries="@array/cardType"
+        app:layout_constraintStart_toEndOf="@+id/cardTypeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nameLabel"/>
+
+    <TextView
+        android:id="@+id/cardNumberLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/cardNumberLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardTypeLabel"
+        android:textColor="@color/red"/>
+
+    <EditText
+        android:id="@+id/cardNumber"
+        android:layout_width="219dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/cardNumberLabel"
+        app:layout_constraintTop_toBottomOf="@+id/cardType"
+        android:textColor="@color/black"
+        android:inputType="number"
+        android:maxLength="16"/>
+
+    <TextView
+        android:id="@+id/expDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dateLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumberLabel"
+        android:textColor="@color/red"/>
+
+    <EditText
+        android:id="@+id/expDate"
+        android:layout_width="77dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="88dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumberLabel"
+        android:textColor="@color/black"
+        android:maxLength="5"/>
+
+    <TextView
+        android:id="@+id/secCodeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/secCodeLabel"
+        app:layout_constraintStart_toEndOf="@+id/expDate"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
+        android:textColor="@color/red"/>
+
+    <EditText
+        android:id="@+id/secCode"
+        android:layout_width="131dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/secCodeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
+        android:textColor="@color/black"
+        android:maxLength="3"/>
+
+    <TextView
+        android:id="@+id/zipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/zipLabel"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toEndOf="@+id/cardType"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/zip"
+        android:layout_width="86dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/zipLabel"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:maxLength="5"/>
+
+    <Button
+        android:id="@+id/purchaseButton"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
+        android:text="@string/purchaseButton"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secCode" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>
