@@ -28,4 +28,60 @@
             android:textColor="@color/white"/>
     </android.support.v7.widget.Toolbar>
 
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.mlbtickets.MapBox"
+        android:layout_width="fill_parent"
+        android:layout_height="293dp"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/displayText"
+        android:layout_width="match_parent"
+        android:layout_height="171dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment1" />
+
+    <TextView
+        android:id="@+id/txtLabel"
+        android:layout_width="375dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/txtLabel"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayText" />
+
+    <EditText
+        android:id="@+id/phoneNum"
+        android:layout_width="242dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:maxLength="10"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabel" />
+
+    <Button
+        android:id="@+id/txtButton"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/red"
+        android:text="@string/txtButton"
+        app:layout_constraintStart_toEndOf="@+id/phoneNum"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabel" />
+
+
+
+
+
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.mlbtickets;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     int numTicket;
     String priceInfo;
     double price;
+    String total;
+    final int YEAR_MIN = 18;
+    final int YEAR_MAX = 27;
     String name;
     String cardType;
     String zip;
@@ -54,23 +59,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView ticketInfo = (TextView) findViewById(R.id.ticketInfo);
         final Spinner numTickets = (Spinner) findViewById(R.id.numTicketsSelect);
         final TextView numTicketsLabel = (TextView) findViewById(R.id.numTicketsLabel);
-        final TextView paymentLabel = (TextView) findViewById(R.id.paymentLabel);
-        final TextView nameLabel = (TextView) findViewById(R.id.nameLabel);
-        final EditText name = (EditText) findViewById(R.id.name);
-        final TextView cardTypeLabel = (TextView) findViewById(R.id.cardTypeLabel);
-        final Spinner cardType = (Spinner) findViewById(R.id.cardType);
-        final TextView cardNumberLabel = (TextView) findViewById(R.id.cardNumberLabel);
-        final EditText cardNumber = (EditText) findViewById(R.id.cardNumber);
-        final TextView expDateLabel = (TextView) findViewById(R.id.expDateLabel);
-        final EditText expDate = (EditText) findViewById(R.id.expDate);
-        final TextView secCodeLabel = (TextView) findViewById(R.id.secCodeLabel);
-        final EditText secCode = (EditText) findViewById(R.id.secCode);
-        final TextView zipLabel = (TextView) findViewById(R.id.zipLabel);
-        final EditText zip = (EditText) findViewById(R.id.zip);
         final Button purchaseButton = (Button) findViewById(R.id.purchaseButton);
-
-
-
 
         numTickets.setSelection(0);
 
@@ -131,11 +120,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         price = Double.parseDouble(priceInfo);
                         price = price * numTicket;
+                        total = currency.format(price);
 
                         ticketInfo.setVisibility(View.VISIBLE);
                         ticketInfo.setText("\nBallpark: " + park.toUpperCase() + "\n" + game +
-                                "\n" + ticket + " X " + numTicket + "\nTotal: " +
-                                currency.format(price));
+                                "\n" + ticket + " X " + numTicket + "\nTotal: " + total);
                 }
             }
 
@@ -147,11 +136,127 @@ public class MainActivity extends AppCompatActivity {
 
         purchaseButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //validate input
-
 
                 Intent i = new Intent(MainActivity.this, DisplayActivity.class);
-                startActivityForResult(i, 1);
+                final TextView paymentLabel = (TextView) findViewById(R.id.paymentLabel);
+                final TextView nameLabel = (TextView) findViewById(R.id.nameLabel);
+                EditText name = (EditText) findViewById(R.id.name);
+                final TextView cardTypeLabel = (TextView) findViewById(R.id.cardTypeLabel);
+                Spinner cardType = (Spinner) findViewById(R.id.cardType);
+                final TextView cardNumberLabel = (TextView) findViewById(R.id.cardNumberLabel);
+                EditText cardNumber = (EditText) findViewById(R.id.cardNumber);
+                final TextView expDateLabel = (TextView) findViewById(R.id.expDateLabel);
+                EditText expDate = (EditText) findViewById(R.id.expDate);
+                final TextView secCodeLabel = (TextView) findViewById(R.id.secCodeLabel);
+                EditText secCode = (EditText) findViewById(R.id.secCode);
+                final TextView zipLabel = (TextView) findViewById(R.id.zipLabel);
+                EditText zip = (EditText) findViewById(R.id.zip);
+
+                String displayName;
+                String expDateString;
+                String displayCardNumber ="";
+                String displayZip = "";
+                String displaySecCode = "";
+                String displayCardType;
+                boolean error = false;
+                String errorText = "";
+                int month;
+                int year;
+
+
+
+
+                //validate input
+
+                // validate name
+                if (name.getText().toString().matches("")) {
+                    error = true;
+                    errorText += getString(R.string.nameError);
+                }
+
+                displayName = name.getText().toString();
+
+                // validate date
+                if (expDate.getText().toString().matches("")) {
+                    error = true;
+                    errorText += getString(R.string.expDateError);
+                } else if (expDate.getText().toString().length() < 5) {
+                    error = true;
+                    errorText += getString(R.string.expDateLengthError);
+                } else if (!expDate.getText().toString().substring(2,3).equals("/")) {
+                    error = true;
+                    errorText += getString(R.string.expDateLengthError);
+
+                } else {
+                    expDateString = expDate.getText().toString();
+                    month = Integer.parseInt(expDateString.substring(0, 2));
+                    year = Integer.parseInt(expDateString.substring(3, 5));
+                    if (month < 1 || month > 12) {
+                        error = true;
+                        errorText += getString(R.string.monthError);
+                    } else if (year < YEAR_MIN || year > YEAR_MAX) {
+                        error = true;
+                        errorText += getString(R.string.yearError);
+                    }
+                }
+
+                //validate credit card number
+                if (cardNumber.getText().toString().matches("")) {
+                    error = true;
+                    errorText += getString(R.string.cardError);
+                } else if (cardNumber.getText().toString().length() < 16) {
+                    error = true;
+                    errorText += getString(R.string.cardError);
+                } else {
+                    displayCardNumber = cardNumber.getText().toString();
+                    displayCardNumber = displayCardNumber.substring(displayCardNumber.length() - 4);
+                }
+
+                //validate zip code
+                if (zip.getText().toString().matches("")) {
+                    error = true;
+                    errorText += getString(R.string.zipError);
+                } else if (zip.getText().toString().length() < 5) {
+                    error = true;
+                    errorText += getString(R.string.zipError);
+                } else {
+                    displayZip = zip.getText().toString(); // not used here but will be used for processing
+                }
+
+                //validate security code
+                if (secCode.getText().toString().matches("")) {
+                    error = true;
+                    errorText += getString(R.string.secCodeError);
+                } else if (secCode.getText().toString().length() < 3) {
+                    error = true;
+                    errorText += getString(R.string.secCodeError);
+                } else {
+                    displaySecCode = zip.getText().toString(); // not used here but will be used for processing
+                }
+
+                //validate card type
+                if (cardType.getSelectedItemPosition() == 0) {
+                    error = true;
+                    errorText += getString(R.string.cardTypeError);
+                }
+
+                displayCardType = cardType.getSelectedItem().toString();
+
+                // if errors display them and reset flag and text
+                if (error) {
+                    Toast toast = Toast.makeText(getApplicationContext(), errorText, Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+
+                    i.putExtra("passedText", "**** CUSTOMER RECEIPT ****\n\nCustomer Name: " + displayName + "\nCard Type: " + displayCardType +
+                            "    CC#: " + displayCardNumber + "\n\n" + game + "\n" + ticket +
+                            "    # Tickets: " + numTicket + "\n\nAmount due and paid: " +
+                            total);
+
+                    startActivityForResult(i, 1);
+                }
+
+
             }
 
         });

@@ -13,7 +13,17 @@
     <string name="zipLabel">Billing Zip:</string>
     <string name="purchaseButton">CONFIRM PURCHASE</string>
     <string name="numTicketsLabel"># of Tickets:</string>
-
+    <string name="monthError">\nPlease enter a valid month</string>
+    <string name="yearError">\nPlease enter a valid year</string>
+    <string name="nameError">\nPlease enter your name</string>
+    <string name="cardError">\nPlease enter 16-digit card number</string>
+    <string name="expDateError">\nPlease enter card expiration date</string>
+    <string name="expDateLengthError">\nPlease enter expiration date in xx/xx format</string>
+    <string name="secCodeError">\nPlease enter 3-digit security code</string>
+    <string name="cardTypeError">\nPlease select a card type</string>
+    <string name="zipError">\nPlease enter 5-digit zip code</string>
+    <string name="txtButton">TEXT RECEIPT</string>
+    <string name="txtLabel">ENTER 10-DIGIT PHONE NUMBER FOR TEXT RECEIPT</string>
 
 
 
